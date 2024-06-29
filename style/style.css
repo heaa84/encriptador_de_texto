@@ -41,6 +41,10 @@ body{
     flex-direction: column;
     justify-content:space-between ;
 }
+.contenedor__logo__alura__ingresa_texto{
+    display: flex;
+    flex-direction: column;
+}
 .contenedor__btn__encriptar__desencriptar{
     height: 10%;
 }
@@ -58,4 +62,43 @@ body{
 
 .img__lupa{
     width: 250px;
+}
+
+/*
+cambio para ser resposivo
+*/
+@media (max-width: 768px) {
+    .contenedor__main{
+        flex-direction: column;
+        height: 130vh;
+    }
+    .contenedor__texto__bnt{
+        width: 100%;
+        height: 85%;
+        margin-bottom: 2%;
+    }
+    .contenedor__texto__btn__encritado{
+        align-items: center;
+        gap: 20px;
+    }
+    .img__lupa{
+        display: none;
+    }    
+}
+
+@media (max-width: 375px) {
+    .contenedor__main{
+        padding: 0;
+        margin: 2px 2px 0 2px;
+        width: auto;
+        height: 100vh;
+    }
+    .contenedor__texto__bnt{
+        width: 100%;
+        height: 85%;
+        margin-bottom: .5%;
+    }
+    .contenedor__texto__btn__encritado{
+        gap: 15px;
+    }
 }
