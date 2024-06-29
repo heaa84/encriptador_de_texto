@@ -1,18 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed&display=swap');
 :root{
-    --color-primario: red;
-    --color-secundario: #00005a;
-    --color-terciario: rgb(248, 248, 226);
-    --color-cuarto: green;
+    --color-primario: #f2f5fcff;
+    --color-secundario: #0a3870ff;
+    --color-terciario: #fc6572ff;
+    --color-cuarto: #dae7edff;
     --color-quinto: #555555;
-    --color-sexto: rgb(65, 214, 251);
+    --color-sexto: #5ed5f2ff;
+    --font-fira:"Fira Sans Condensed", sans-serif;
 }
 *{
     margin: 0;
     padding: 0;
-    /*border: 1px solid red;*/
+    border: 1px solid red;
 }
 body{
-    background-color: var(--color-sexto);
+    background-color: var(--color-primario);
     width: auto;
     height: auto;
 }
@@ -25,10 +27,10 @@ body{
     display: flex;
     justify-content: space-between ;
     border: 1px solid var(--color-quinto);
-    box-shadow: 5px 5px 5px var(--color-secundario);
+    box-shadow: 5px 5px 5px var(--color-cuarto);
 }
 
-/*contenedor izquierdo de la pagina para ingrsar tyexto*/
+/*contenedor izquierdo de la pagina para ingrsar texto*/
 .contenedor__texto__bnt{
     display: flex;
     flex-direction: column;
@@ -45,8 +47,54 @@ body{
     display: flex;
     flex-direction: column;
 }
+.logo__Alura{
+    font-size: 68px;
+    width: 120px;
+    height: 48px;
+    font-family: var(--font-fira);
+    margin-bottom: 60px;
+    color: var(--color-secundario);
+}
+.caja__ingrasa__texto{
+    padding-left: 10%;
+    padding-right: 10%;
+    font-family: var(--font-fira);
+    font-size: xx-large;
+    background-color: var(--color-primario);
+    /*quita stylos de texarea*/
+    border: none;
+    overflow: auto;
+    outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    resize: none; /*remove the resize handle on the bottom right*/
+    
+}
+.texto__reglas{
+    padding-left: 10%;
+    font-size: 20px;
+}
+.icono__esclamacion{
+    width: 17px;
+    height: 17px;
+}
 .contenedor__btn__encriptar__desencriptar{
-    height: 10%;
+    padding-left: 10%;
+    height: 67px;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 10%;
+}
+
+button{
+    width: 45%;
+    height: 67px;
+    border-radius: 25px;
+    background-color: var(--color-sexto);
+}
+button:hover{
+    background-color: var(--color-terciario);
 }
 
 /*contenedor lado derecho de la pagina para desincriptar texto*/
@@ -57,7 +105,7 @@ body{
    background-color: #ffffff;
    border-radius: 15px;
    padding: 3%;
-   box-shadow: 5px 5px 5px var(--color-terciario);
+   box-shadow: 5px 5px 5px var(--color-cuarto);
 }
 
 .img__lupa{
@@ -100,5 +148,9 @@ cambio para ser resposivo
     }
     .contenedor__texto__btn__encritado{
         gap: 15px;
+    }
+    .contenedor__btn__encriptar__desencriptar {
+        padding-left: 2%;
+        padding-right: 2%;
     }
 }
