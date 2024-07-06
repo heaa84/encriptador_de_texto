@@ -1,56 +1,51 @@
-let mensaje = "mensaje prueba";             /*Variable que va a contener el mensaje original*/
-let mensajeC = "";         /*Variable para el texto cifrado*/
-let mensajeN="";/**mensaje generado */
-let abcMinusculas = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', ' ']
-let textStatus = false;          /*Para saver si el texto va a estar cifrar = true o no = false*/
-let textViable = false;          /*Verifica si el mensaje tiene la letras del abecedario y men minusculas */
+let abcedario = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', ' ']
+let esViable = false;          /*Verifica si el mensaje tiene la letras del abecedario y men minusculas */
 let listL = ["e", "i", "a", "o", "u"];         /*Lista de letras a cifrar del mensaje*/
 let listP = ["enter", "imes", "ai", "ober", "ufat"];   /*Lista de palabras a cifrar del mensaje*/
+let mensaje="";
 
-
-
-function evalua_mensaje(mensaje_ejemplo, textStatus, textViable, abcMinusculas) {
+/**funcion que evalua el mensaje si esta en minusculas, sin caracteres especiales */
+function evalua_mensaje(mensaje, abcedario) {
     /* en este ciclo for verificamos que se cumpla que este en minusculas y sin caracteres especiales */
-    for (let indexCadena = 0; indexCadena < mensaje_ejemplo.length; indexCadena++) {
-        for (let indexList = 0; indexList < abcMinusculas.length; indexList++) {
-            console.log(`INDICE CADENA ${indexCadena} -- INDICE LISTA ${indexList}`)
-            if (mensaje_ejemplo[indexCadena] == abcMinusculas[indexList]) {
-                textViable = true;
-                break;
-            }
+    for (let index = 0; index < mensaje.length; index++) {
+        alert(mensaje)
+        if (abcedario.includes(mensaje[index])) {
+            esViable=true;
+        } else {
+            esViable=false;
+            break;
         }
     }
 
     // Usar el método some para verificar si alguna palabrade la lista está en la cadena
-    textStatus = listP.some(palabra => mensaje_ejemplo.includes(palabra));
-    console.log(`mensaje codificado ${textStatus}`);
-    console.log(`mensaje viable ${textViable}`);
+    esViable = (mensaje===mensaje.toLowerCase()) ? true : false;
+    return (esViable);
 }
 
-function generar_mensaje(mensaje,listL, listP, mensajeN) {
-    for (let indexM = 0; indexM < mensaje.length; indexM++) {/**indexM indice de mensaje */
-        for (let indexL = 0; indexL < listL.length; indexL++) {/**indexL indice de las listas */
-            if (mensaje[indexM]==listL[indexL]) {
-                mensajeN=mensajeN+listP[indexL];
-                console.log(mensaje);
-                console.log(mensajeN);
-                indexM++;
-                break;       
-            }
-        }
-        if (indexM < mensaje.length) {
-            mensajeN=mensajeN+mensaje[indexM];
-            console.log(indexM);
-        }
+/**funcion para codifica/decodificar mensaje */
+function codiDecodiMensaje (mensaje,listaParametro,listaRemplazo) {
+    for (let index = 0; index < listaParametro.length; index++) {
+        mensaje=mensaje.replaceAll(listaParametro[index], listaRemplazo[index]);
     }
-    return(mensajeN);
+    return mensaje;
 }
 
-console.log(`mensaje viable ${textViable}`);
-console.log(`mensaje codificado ${textStatus}`);
-evalua_mensaje(mensaje, textStatus, textViable, abcMinusculas);
-if (!textStatus) {
-    mensajeC=generar_mensaje(mensaje,listL, listP, mensajeN)/** codificamos el emsage y lo guardamos en mensajeC */
+/**funcion del boton encriptar */
+function encriptar(mensaje) {
+    mensaje=document.querySelector("#entrada__texto").value;
+    console.log(`mensaje viable en funcion encriptar ${esViable}`);
+    alert(mensaje)
+    alert("es variable: "+ esViable)
+    if (esViable) {
+        alert("es viable");
+    } else {
+        alert("error al ingresar mensaje")
+    }
 }
 
-console.log(mensajeC);
+esViable=evalua_mensaje(mensaje, abcedario);
+
+/*codificar mensaje con funcion e imprimirlo*/
+console.log(`el texto cifrado es: ${codiDecodiMensaje(mensaje,listL,listP)}`);
+/*decodificar mensaje con funcion e imprimirlo*/
+console.log(`el texto decifrado es : ${codiDecodiMensaje(mensaje,listP,listL)}`);
