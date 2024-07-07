@@ -1,20 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 :root{
-    --color-primario: #f2f5fcff;
-    --color-secundario: #0a3870ff;
-    --color-terciario: #fc6572ff;
-    --color-cuarto: #dae7edff;
-    --color-quinto: #555555;
-    --color-sexto: #5ed5f2ff;
+    --color-blanco:#FFFFFF;
+    --color-tono-blanco: #F3F5FC;
+    --color-tono-blanco-dos: #EFF1FA;
+    --color-negro : #000000;
+    --color-tono-negro: #757575;
+    --color-primario: #0A3871;
+    --color-bordes: #e2e4eb;
+    --color-btn-hover: #D8DFE8;
     --font-fira:"Fira Sans Condensed", sans-serif;
+    --font-inter:"Inter", sans-serif;
 }
+
 *{
     margin: 0;
     padding: 0;
-    border: 1px solid red;
+    /*border: 1px solid red;*/
+    color: var(--color-negro);
 }
 body{
-    background-color: var(--color-primario);
+    background-color: var(--color-tono-blanco);
     width: auto;
     height: auto;
 }
@@ -22,12 +28,11 @@ body{
 .contenedor__main{
     width: 90%;
     height: 80vh;
-    padding: 3%;
+    padding: 2%;
     margin: 2% auto 0 auto;
     display: flex;
     justify-content: space-between ;
-    border: 1px solid var(--color-quinto);
-    box-shadow: 5px 5px 5px var(--color-cuarto);
+    box-shadow: 10px 10px 5px var(--color-tono-blanco-dos);
 }
 
 /*contenedor izquierdo de la pagina para ingrsar texto*/
@@ -38,7 +43,7 @@ body{
     width: 80%;
 }
 .contenedor__ingrasar__texto{
-    height: 90%;
+    height: 900%;
     display: flex;
     flex-direction: column;
     justify-content:space-between ;
@@ -48,19 +53,18 @@ body{
     flex-direction: column;
 }
 .logo__Alura{
-    font-size: 68px;
     width: 120px;
     height: 48px;
-    font-family: var(--font-fira);
-    margin-bottom: 60px;
-    color: var(--color-secundario);
+    margin-bottom: 40px;
 }
 .caja__ingrasa__texto{
     padding-left: 10%;
     padding-right: 10%;
-    font-family: var(--font-fira);
-    font-size: xx-large;
-    background-color: var(--color-primario);
+    font-family: var(--font-inter);
+    font-weight: 400;
+    font-size: 32px;
+    background-color: var(--color-fondo-azul);
+    color: var(--color-primario);
     /*quita stylos de texarea*/
     border: none;
     overflow: auto;
@@ -68,16 +72,20 @@ body{
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
-    resize: none; /*remove the resize handle on the bottom right*/
+    resize: none; 
     
 }
 .texto__reglas{
     padding-left: 10%;
-    font-size: 20px;
+    margin-bottom: 10px;
+    font-family: var(--font-inter);
+    font-weight: 400;
+    font-size: 16px;
+    color: #495057;
 }
 .icono__esclamacion{
-    width: 17px;
-    height: 17px;
+    width: 16px;
+    height: 16px;
 }
 .contenedor__btn__encriptar__desencriptar{
     padding-left: 10%;
@@ -86,30 +94,78 @@ body{
     justify-content: space-between;
     padding-right: 10%;
 }
+.texto__encriptado{
+    font-size: large;
+    font-family: var(--font-fira);
+    color: var(--color-primario);
+}
 
 button{
     width: 45%;
     height: 67px;
     border-radius: 25px;
-    background-color: var(--color-sexto);
+    border: solid var(--color-secundario) 1px;
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    font-family: var(--font-inter);
+    font-weight: 400;
+    font-size: 16px;
+    text-align: center;
 }
+
 button:hover{
-    background-color: var(--color-terciario);
+    border: solid var(--color-primario) 1px;
+    background-color: var(--color-btn-hover);
+    color: var(--color-primario);
 }
 
 /*contenedor lado derecho de la pagina para desincriptar texto*/
 .contenedor__texto__btn__encritado{
-   display: flex;
-   flex-direction: column;
-   justify-content:space-between ;
-   background-color: #ffffff;
-   border-radius: 15px;
-   padding: 3%;
-   box-shadow: 5px 5px 5px var(--color-cuarto);
+    width: 400px;
+    gap: 20px;
+    padding: 3%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center ;
+    background-color: var(--color-blanco);
+    border-radius: 15px;
+    box-shadow: 0px 0px 5px var(--color-bordes);
+    align-items: center;
+    color: var(--color-negro);
 }
 
 .img__lupa{
     width: 250px;
+}
+
+.contenedor__ningun__mensaje{
+    width: 336px;
+    height: 122px;
+    gap: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.parrafo__ningun__mensaje{
+    width: 336px;
+    height: 58px;
+    text-align: center;
+    font-family: var(--font-inter);
+    font-weight: 700;
+    font-size: 24px;
+}
+.parrafo__ingresa__texto{
+    width: 336px;
+    height: 58px; 
+    text-align: center;  
+    font-family: var(--font-inter); 
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.btn__copiar{
+    width: 70%;
 }
 
 /*
@@ -125,10 +181,7 @@ cambio para ser resposivo
         height: 85%;
         margin-bottom: 2%;
     }
-    .contenedor__texto__btn__encritado{
-        align-items: center;
-        gap: 20px;
-    }
+
     .img__lupa{
         display: none;
     }    
@@ -146,9 +199,7 @@ cambio para ser resposivo
         height: 85%;
         margin-bottom: .5%;
     }
-    .contenedor__texto__btn__encritado{
-        gap: 15px;
-    }
+
     .contenedor__btn__encriptar__desencriptar {
         padding-left: 2%;
         padding-right: 2%;

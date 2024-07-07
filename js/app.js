@@ -2,50 +2,76 @@ let abcedario = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm'
 let esViable = false;          /*Verifica si el mensaje tiene la letras del abecedario y men minusculas */
 let listL = ["e", "i", "a", "o", "u"];         /*Lista de letras a cifrar del mensaje*/
 let listP = ["enter", "imes", "ai", "ober", "ufat"];   /*Lista de palabras a cifrar del mensaje*/
-let mensaje="";
+let mensaje = "";
 
 /**funcion que evalua el mensaje si esta en minusculas, sin caracteres especiales */
 function evalua_mensaje(mensaje, abcedario) {
     /* en este ciclo for verificamos que se cumpla que este en minusculas y sin caracteres especiales */
     for (let index = 0; index < mensaje.length; index++) {
-        alert(mensaje)
         if (abcedario.includes(mensaje[index])) {
-            esViable=true;
+            esViable = true;
         } else {
-            esViable=false;
+            esViable = false;
             break;
         }
     }
 
     // Usar el método some para verificar si alguna palabrade la lista está en la cadena
-    esViable = (mensaje===mensaje.toLowerCase()) ? true : false;
+    esViable = (mensaje === mensaje.toLowerCase()) ? true : false;
     return (esViable);
 }
 
 /**funcion para codifica/decodificar mensaje */
-function codiDecodiMensaje (mensaje,listaParametro,listaRemplazo) {
+function codiDecodiMensaje(mensaje, listaParametro, listaRemplazo) {
     for (let index = 0; index < listaParametro.length; index++) {
-        mensaje=mensaje.replaceAll(listaParametro[index], listaRemplazo[index]);
+        mensaje = mensaje.replaceAll(listaParametro[index], listaRemplazo[index]);
     }
     return mensaje;
 }
 
 /**funcion del boton encriptar */
 function encriptar(mensaje) {
-    mensaje=document.querySelector("#entrada__texto").value;
-    console.log(`mensaje viable en funcion encriptar ${esViable}`);
-    alert(mensaje)
-    alert("es variable: "+ esViable)
-    if (esViable) {
-        alert("es viable");
+    mensaje = document.querySelector("#entrada__texto").value;
+    esViable = evalua_mensaje(mensaje, abcedario);
+
+    if (esViable && mensaje.length > 1) {
+        if (document.querySelector(".img__lupa")) {
+            
+            document.querySelector(".img__lupa").remove(); /**quitamos la imagen de la lupa */
+        }
+        document.querySelector(".texto__encriptado").innerHTML = ` ${codiDecodiMensaje(mensaje, listL, listP)}`;
+        document.querySelector("#entrada__texto").value = " ";
+        document.querySelector(".btn__copiar").removeAttribute("hidden")
     } else {
-        alert("error al ingresar mensaje")
+        alert("Error al ingresar mensaje");
+    }
+}
+/**funcion de boton decencriptas */
+function decencriptar(mensaje) {
+    mensaje = document.querySelector("#entrada__texto").value;
+    esViable = evalua_mensaje(mensaje, abcedario);
+    if (esViable && mensaje.length > 1) {
+        document.querySelector(".texto__encriptado").innerHTML = ` ${codiDecodiMensaje(mensaje, listP, listL)}`;
+        document.querySelector("#entrada__texto").value = " ";
+        document.querySelector(".btn__copiar").removeAttribute("hidden")
+    } else {
+        alert("Error al ingresar mensaje");
     }
 }
 
-esViable=evalua_mensaje(mensaje, abcedario);
+/**funcion del boton copiar */
+function btn_copy() {
+    let textoCopyado = document.querySelector(".texto__encriptado").innerText;
+    console.log(textoCopyado);
+
+    // Usar la API del Portapapeles para copiar el texto
+    navigator.clipboard.writeText(textoCopyado)
+    alert(`texto; ${textoCopyado} copiado en porta papeles.`)
+    document.querySelector(".texto__encriptado").innerHTML=" ";
+}
+
 
 /*codificar mensaje con funcion e imprimirlo*/
-console.log(`el texto cifrado es: ${codiDecodiMensaje(mensaje,listL,listP)}`);
+console.log(`el texto cifrado es: ${codiDecodiMensaje(mensaje, listL, listP)}`);
 /*decodificar mensaje con funcion e imprimirlo*/
-console.log(`el texto decifrado es : ${codiDecodiMensaje(mensaje,listP,listL)}`);
+console.log(`el texto decifrado es : ${codiDecodiMensaje(mensaje, listP, listL)}`);

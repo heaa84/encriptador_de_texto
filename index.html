@@ -15,25 +15,28 @@
         <section class="contenedor__texto__bnt">
             <section class="contenedor__ingrasar__texto">
                 <span class="contenedor__logo__alura__ingresa_texto">
-                    <span class="logo__Alura">a</span>
+                    <img src="asset/Logo.png" alt="No se encontro logo a" class="logo__Alura">
                     <textarea name="entrada__texto" id="entrada__texto"  placeholder="ingresa texto a codificar" class="caja__ingrasa__texto" rows="8"></textarea>
                 </span>
-
-                <span class="texto__reglas"><img src="asset/icono_exclamacion.jpeg" alt="icono__esclamacion" class="icono__esclamacion"> solo minuscilas, sin caracteres especiales</span>
+                <span class="texto__reglas"><img src="asset/exclamation-circle-fill.svg" alt="icono__esclamacion" class="icono__esclamacion"> Solo minuscilas, sin caracteres especiales</span>
             </section>
             <section class="contenedor__btn__encriptar__desencriptar">
                 <button class="btn__encriptar" onclick="encriptar()">
                     ENCRIPTAR
                 </button>
-                <button class="btn__desencriptar">
+                <button class="btn__desencriptar" onclick="decencriptar()">
                     DESENCRIPTAR
                 </button>
             </section>
         </section>
         <section class="contenedor__texto__btn__encritado">
-            TEXTO ENCRIPTADO
-            <img class="img__lupa" src="asset/lupa3.jpeg" alt="imagen no encontrada">
-            <button class="btn__copiar">COPIAR</button>
+            <span class="texto__encriptado"> </span> 
+            <img class="img__lupa" src="asset/search.svg" alt="imagen no encontrada"> 
+             <section class="contenedor__ningun__mensaje">
+                <p class="parrafo__ningun__mensaje">Ningún mensaje fue encontrado</p>
+                <p class="parrafo__ingresa__texto">Ingresa el texto que desees encriptar o desencriptar.</p>
+             </section>
+            <button class="btn__copiar" onclick="btn_copy()" hidden="anable">COPIAR</button>
         </section>
     </main>
     <footer>
