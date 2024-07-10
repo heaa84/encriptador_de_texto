@@ -2,7 +2,15 @@ let abcedario = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm'
 let esViable = false;          /*Verifica si el mensaje tiene la letras del abecedario y men minusculas */
 let listL = ["e", "i", "a", "o", "u"];         /*Lista de letras a cifrar del mensaje*/
 let listP = ["enter", "imes", "ai", "ober", "ufat"];   /*Lista de palabras a cifrar del mensaje*/
-let mensaje = "";
+
+/**llamada de elementos y guardarlo en una variable*/
+const mensajeProcesado= document.querySelector(".texto__encriptado");
+const contenedorTextos= document.querySelector(".contenedor__ningun__mensaje");
+const btnCopiar= document.querySelector(".btn__copiar");
+const entradaTexto= document.querySelector("#entrada__texto");
+const imgLupa= document.querySelector(".img__lupa");
+
+
 
 /**funcion que evalua el mensaje si esta en minusculas, sin caracteres especiales */
 function evalua_mensaje(mensaje, abcedario) {
@@ -31,29 +39,31 @@ function codiDecodiMensaje(mensaje, listaParametro, listaRemplazo) {
 
 /**funcion del boton encriptar */
 function encriptar(mensaje) {
-    mensaje = document.querySelector("#entrada__texto").value;
+    mensaje = entradaTexto.value;
     esViable = evalua_mensaje(mensaje, abcedario);
 
     if (esViable && mensaje.length > 1) {
-        if (document.querySelector(".img__lupa")) {
+        if (imgLupa) {
             
-            document.querySelector(".img__lupa").remove(); /**quitamos la imagen de la lupa */
+            imgLupa.style.display="none"; /**ocultanos la imagen de la lupa */
         }
-        document.querySelector(".texto__encriptado").innerHTML = ` ${codiDecodiMensaje(mensaje, listL, listP)}`;
-        document.querySelector("#entrada__texto").value = " ";
-        document.querySelector(".btn__copiar").removeAttribute("hidden")
+        mensajeProcesado.innerHTML = ` ${codiDecodiMensaje(mensaje, listL, listP)}`;
+        entradaTexto.value = " ";
+        btnCopiar.style.display="block"; 
+        contenedorTextos.style.display="none"; 
+
     } else {
         alert("Error al ingresar mensaje");
     }
 }
 /**funcion de boton decencriptas */
 function decencriptar(mensaje) {
-    mensaje = document.querySelector("#entrada__texto").value;
+    mensaje = entradaTexto.value;
     esViable = evalua_mensaje(mensaje, abcedario);
     if (esViable && mensaje.length > 1) {
-        document.querySelector(".texto__encriptado").innerHTML = ` ${codiDecodiMensaje(mensaje, listP, listL)}`;
-        document.querySelector("#entrada__texto").value = " ";
-        document.querySelector(".btn__copiar").removeAttribute("hidden")
+        mensajeProcesado.innerHTML = ` ${codiDecodiMensaje(mensaje, listP, listL)}`;
+        entradaTexto.value = " ";
+        btnCopiar.style.display="block"; 
     } else {
         alert("Error al ingresar mensaje");
     }
@@ -61,17 +71,14 @@ function decencriptar(mensaje) {
 
 /**funcion del boton copiar */
 function btn_copy() {
-    let textoCopyado = document.querySelector(".texto__encriptado").innerText;
-    console.log(textoCopyado);
+    let textoCopyado = mensajeProcesado.innerText;
 
     // Usar la API del Portapapeles para copiar el texto
     navigator.clipboard.writeText(textoCopyado)
     alert(`texto; ${textoCopyado} copiado en porta papeles.`)
-    document.querySelector(".texto__encriptado").innerHTML=" ";
+    mensajeProcesado.innerHTML=" ";
+    btnCopiar.style.display= "none"; 
 }
 
 
-/*codificar mensaje con funcion e imprimirlo*/
-console.log(`el texto cifrado es: ${codiDecodiMensaje(mensaje, listL, listP)}`);
-/*decodificar mensaje con funcion e imprimirlo*/
-console.log(`el texto decifrado es : ${codiDecodiMensaje(mensaje, listP, listL)}`);
+
