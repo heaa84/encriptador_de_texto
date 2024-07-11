@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ENCRIPADOR DE TEXTO</title>
     <link rel="stylesheet" href="style/style.css">
+    <link rel="shortcut icon" href="asset/favicon.svg" type="image/x-icon">
 </head>
 <body>
     <header>
@@ -20,9 +21,11 @@
             </section>
             <section class="contenedor__btn__encriptar__desencriptar">
                 <button class="btn__encriptar" onclick="encriptar()">
+                    <img src="asset/lock-fill.svg" alt="sin imagen">
                     ENCRIPTAR
                 </button>
                 <button class="btn__desencriptar"  onclick="decencriptar()">
+                    <img src="asset/unlock-fill.svg" alt="sin imagen">
                     DESENCRIPTAR
                 </button>
             </section>
@@ -34,12 +37,12 @@
                 <p class="parrafo__ningun__mensaje">Ningún mensaje fue encontrado</p>
                 <p class="parrafo__ingresa__texto">Ingresa el texto que desees encriptar o desencriptar.</p>
              </section>
-            <button class="btn__copiar" onclick="btn_copy()" >COPIAR</button>
+            <button class="btn__copiar" onclick="btn_copy()" > <img src="asset/copy.svg" alt="sin imagen"> COPIAR</button>
         </section>
     </main>
     <footer>
-
+        <span class="footer">Creada por: Hugo Enrique Ayala Alarcon</span>
     </footer>
 </body>
-<script src="js/app.js"></script>
+<script src="js/main.js"></script>
 </html>

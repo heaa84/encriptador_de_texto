@@ -9,7 +9,7 @@ const contenedorTextos= document.querySelector(".contenedor__ningun__mensaje");
 const btnCopiar= document.querySelector(".btn__copiar");
 const entradaTexto= document.querySelector("#entrada__texto");
 const imgLupa= document.querySelector(".img__lupa");
-
+const salida= document.querySelector(".texto__encriptado");
 
 
 /**funcion que evalua el mensaje si esta en minusculas, sin caracteres especiales */
@@ -51,7 +51,7 @@ function encriptar(mensaje) {
         entradaTexto.value = " ";
         btnCopiar.style.display="block"; 
         contenedorTextos.style.display="none"; 
-
+        salida.style.display="block";
     } else {
         alert("Error al ingresar mensaje");
     }
@@ -64,6 +64,7 @@ function decencriptar(mensaje) {
         mensajeProcesado.innerHTML = ` ${codiDecodiMensaje(mensaje, listP, listL)}`;
         entradaTexto.value = " ";
         btnCopiar.style.display="block"; 
+        salida.style.display="block";
     } else {
         alert("Error al ingresar mensaje");
     }

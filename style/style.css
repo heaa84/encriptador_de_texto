@@ -2,26 +2,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
 :root{
-    --color-blanco:#FFFFFF;
-    --color-tono-blanco: #F3F5FC;
-    --color-tono-blanco-dos: #EFF1FA;
-    --color-negro : #000000;
-    --color-tono-negro: #757575;
-    --color-primario: #0A3871;
-    --color-bordes: #e2e4eb;
-    --color-btn-hover: #D8DFE8;
+    --color-fondo: white; 
+    --color-contenedor-principal:white;
+    --color-sombra-contenedor-principal: black; 
+    --color-contenedor-salida: white;
+    --color-sombra-contenedor-salida: gray;
+
+    --color-boton: red;
+    --color-borde-boton:black;
+    --color-btn-hover: rgb(255, 134, 134);
+    --color-btn-hover-border:red;
+    --color-btn-hover-text:black;
+
+    --color-texto: black;
+    --color-texto-entrada:black;
+    --color-texto-boton:black;
+    --color-text-footer:red;
+
+    --color-reglas: gray;
+
     --font-fira:"Fira Sans Condensed", sans-serif;
-    --font-inter:"Inter", sans-serif;
+    --font-consola: monospace;
 }
 
 *{
     margin: 0;
     padding: 0;
     /*border: 1px solid red;*/
-    color: var(--color-negro);
+    color: var(--color-texto);
 }
 body{
-    background-color: var(--color-tono-blanco);
+    background-color: var(--color-fondo);
     width: auto;
     height: auto;
 }
@@ -33,7 +44,8 @@ body{
     margin: 0 auto 0 auto;
     display: flex;
     justify-content: space-between ;
-    box-shadow: 10px 10px 5px var(--color-tono-blanco-dos);
+    background-color: var(--color-contenedor-principal);
+    box-shadow: 2px 3px 8px var(--color-sombra-contenedor-principal);
 }
 
 /*contenedor izquierdo de la pagina para ingrsar texto*/
@@ -44,10 +56,10 @@ body{
     width: 65%;
 }
 .contenedor__ingrasar__texto{
-    height: 900%;
     display: flex;
     flex-direction: column;
     justify-content:space-between ;
+    height: 100%;
 }
 .contenedor__logo__alura__ingresa_texto{
     display: flex;
@@ -61,11 +73,10 @@ body{
 .caja__ingrasa__texto{
     padding-left: 10%;
     padding-right: 10%;
-    font-family: var(--font-inter);
+    font-family: var(--font-consola);
     font-weight: 400;
     font-size: 32px;
-    background-color: var(--color-fondo-azul);
-    color: var(--color-primario);
+    background-color: var(--color-contenedor-principal);
     /*quita stylos de texarea*/
     border: none;
     overflow: auto;
@@ -79,10 +90,10 @@ body{
 .texto__reglas{
     padding-left: 10%;
     margin-bottom: 10px;
-    font-family: var(--font-inter);
+    font-family: var(--font-consola);
     font-weight: 400;
     font-size: 16px;
-    color: #495057;
+    color: var(--color-reglas);
 }
 .icono__esclamacion{
     width: 16px;
@@ -94,35 +105,37 @@ body{
     display: flex;
     justify-content: space-between;
     padding-right: 10%;
+    padding-bottom: 2%;
 }
 
 .texto__encriptado{
-    font-family: var(--font-inter);
-    font-weight: 400;
-    font-size: 24px;
-    color: var(--color-primario);
+    font-family: var(--font-consola);
+    font-weight: 500;
+    font-size: 28px;
     width: 84%;
     height: 82.73305084745762%;
     overflow: auto;
+    display: none;
+    color: red;
 }
 
 button{
     width: 45%;
     height: 67px;
     border-radius: 25px;
-    border: solid var(--color-secundario) 1px;
-    background-color: var(--color-primario);
-    color: var(--color-blanco);
-    font-family: var(--font-inter);
-    font-weight: 400;
-    font-size: 16px;
+    border: solid var(--color-borde-boton) 1px;
+    background-color: var(--color-boton);
+    color: var(--color-texto-boton);
+    font-family: var(--font-consola);
+    font-weight: 700;
+    font-size: 22px;
     text-align: center;
 }
 
 button:hover{
-    border: solid var(--color-primario) 1px;
     background-color: var(--color-btn-hover);
-    color: var(--color-primario);
+    border: solid var(--color-btn-hover-border) 1px;
+    color: var(--color-btn-hover-text);
 }
 
 /*contenedor lado derecho de la pagina para desincriptar texto*/
@@ -133,11 +146,11 @@ button:hover{
     display: flex;
     flex-direction: column;
     justify-content: center ;
-    background-color: var(--color-blanco);
-    border-radius: 15px;
-    box-shadow: 0px 0px 5px var(--color-bordes);
+    background-color: var(--color-contenedor-salida);
+    box-shadow: 0px 0px 15px var(--color-sombra-contenedor-salida);
+    border-radius: 15px 0px 0px;
     align-items: center;
-    color: var(--color-negro);
+    color: var(--color-texto);
 }
 
 .img__lupa{
@@ -157,7 +170,7 @@ button:hover{
     width: 336px;
     height: 58px;
     text-align: center;
-    font-family: var(--font-inter);
+    font-family: var(--font-consola);
     font-weight: 700;
     font-size: 24px;
 }
@@ -165,7 +178,7 @@ button:hover{
     width: 336px;
     height: 58px; 
     text-align: center;  
-    font-family: var(--font-inter); 
+    font-family: var(--font-consola); 
     font-weight: 400;
     font-size: 16px;
 }
@@ -174,6 +187,16 @@ button:hover{
     width: 70%;
     display: none;
 }
+.footer{
+    display: flex;
+    justify-content: center;
+    padding-top: 1%;
+    font-family: var(--font-consola);
+    width: 600;
+    color: var(--color-text-footer);
+    font-size: 18px;
+    font-style: italic;
+}
 
 /*
 cambio para ser resposivo
@@ -181,12 +204,14 @@ cambio para ser resposivo
 @media (max-width: 768px) {
     .contenedor__main{
         flex-direction: column;
-        height: 1174px;
+        height: auto;
+        padding-left: 0;
     }
     .contenedor__texto__btn__encritado{
         width: auto;
-        margin-top: 3%;
+        margin: 3%;
         min-height: 10%;
+        border-radius: 0;
     }
     .contenedor__ningun__mensaje{
         width: 100%;
@@ -201,11 +226,16 @@ cambio para ser resposivo
         width: 100%;
         height: 85%;
         margin-bottom: 2%;
+        
     }
 
     .img__lupa{
         display: none;
     }    
+    button{
+        font-weight: 400;
+        font-size: 18px;
+    }
 }
 
 @media (max-width: 375px) {
@@ -213,7 +243,7 @@ cambio para ser resposivo
         padding: 0;
         margin: 2px 2px 0 2px;
         width: auto;
-        height: 100vh;
+        
     }
     .contenedor__texto__bnt{
         width: 100%;

@@ -107,3 +107,5 @@ console.log(suma(1, 2, 3, 4)); // Salida: 10
 
 ## Conclusión
 Las funciones flecha proporcionan una manera más concisa y ligada léxicamente de escribir funciones en JavaScript. Son especialmente útiles en situaciones donde necesitas preservar el contexto de `this` o escribir expresiones de funciones cortas.
+
+## vercion v2.0 Cambio de colores cambio de nombre de variables  asignacion de elementos codigo JS mas limpio, cambio de app a main del archivo del codigo JS se agregaron algunos iconos y se trabajo en la parte responsiba
