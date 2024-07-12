@@ -14,22 +14,23 @@
         <section class="contenedor__texto__bnt">
             <section class="contenedor__ingrasar__texto">
                 <span class="contenedor__logo__alura__ingresa_texto">
-                    <img src="asset/Logo.png" alt="No se encontro logo a" class="logo__Alura">
+                    <img src="asset/letter-cultures-svgrepo-com.svg" alt="No se encontro logo a" class="logo__Alura">
                     <textarea name="entrada__texto" id="entrada__texto"  placeholder="ingresa texto a codificar" class="caja__ingrasa__texto" rows="8"></textarea>
                 </span>
                 <span class="texto__reglas"><img src="asset/exclamation-circle-fill.svg" alt="icono__esclamacion" class="icono__esclamacion"> Solo minuscilas, sin caracteres especiales</span>
             </section>
             <section class="contenedor__btn__encriptar__desencriptar">
-                <button class="btn__encriptar" onclick="encriptar()">
+                <button class="btn__encriptar">                                
                     <img src="asset/lock-fill.svg" alt="sin imagen">
                     ENCRIPTAR
                 </button>
-                <button class="btn__desencriptar"  onclick="decencriptar()">
-                    <img src="asset/unlock-fill.svg" alt="sin imagen">
+                <button class="btn__decencriptar" > 
+                    <img src="asset/unlock-fill.svg" alt="sin imagen" class="icon_bnt"> 
                     DESENCRIPTAR
                 </button>
             </section>
         </section>
+        
         <section class="contenedor__texto__btn__encritado">
             <span class="texto__encriptado"> </span> 
             <img class="img__lupa" src="asset/search.svg" alt="imagen no encontrada"> 
@@ -37,7 +38,7 @@
                 <p class="parrafo__ningun__mensaje">Ningún mensaje fue encontrado</p>
                 <p class="parrafo__ingresa__texto">Ingresa el texto que desees encriptar o desencriptar.</p>
              </section>
-            <button class="btn__copiar" onclick="btn_copy()" > <img src="asset/copy.svg" alt="sin imagen"> COPIAR</button>
+            <button class="btn__copiar"> <img src="asset/copy.svg" alt=""> COPIAR</button> <!--quitar onclick-->
         </section>
     </main>
     <footer>

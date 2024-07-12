@@ -11,6 +11,11 @@ const entradaTexto= document.querySelector("#entrada__texto");
 const imgLupa= document.querySelector(".img__lupa");
 const salida= document.querySelector(".texto__encriptado");
 
+/*botones*/
+const btnEncriptar=document.querySelector(".btn__encriptar").addEventListener("click",()=>encriptar());
+const btnDecencriptar=document.querySelector(".btn__decencriptar").addEventListener("click",()=>decencriptar());
+const btnCopy=document.querySelector(".btn__copiar").addEventListener("click",()=>btn_copy())
+
 
 /**funcion que evalua el mensaje si esta en minusculas, sin caracteres especiales */
 function evalua_mensaje(mensaje, abcedario) {
