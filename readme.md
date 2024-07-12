@@ -15,11 +15,7 @@ La letra "o" es convertida para "ober"
 La letra "u" es convertida para "ufat"
 ```
 
-# Temas implementados del curso 
-
-**Uso de de CSS**
-**Uso de de JS**
-**Uso de de HTML**
+# Tecnologias implementadas: HTML, JS, CSS.
 
 ## vercion v2.0: Cambio de colores cambio de nombre de variables  asignacion de elementos codigo JS mas limpio, cambio de app a main del archivo del codigo JS se agregaron algunos iconos y se trabajo en la parte responsiba
 
