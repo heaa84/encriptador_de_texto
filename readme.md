@@ -3,7 +3,8 @@
 
 # Este proyecto es un reto de programacio de ALURA LATAM se trata de lo siguiente;
 
-**explicacion del proyecto**
+**cifrar o decifrar un mensaje**
+
 
 **Las "llaves" de encriptación que utilizaremos son las siguientes:**
 

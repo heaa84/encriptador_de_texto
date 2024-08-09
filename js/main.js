@@ -1,4 +1,4 @@
-let abcedario = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', ' ']
+let abcedario =['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', ' ']
 let esViable = false;          /*Verifica si el mensaje tiene la letras del abecedario y men minusculas */
 let listL = ["e", "i", "a", "o", "u"];         /*Lista de letras a cifrar del mensaje*/
 let listP = ["enter", "imes", "ai", "ober", "ufat"];   /*Lista de palabras a cifrar del mensaje*/
@@ -25,7 +25,7 @@ function evalua_mensaje(mensaje, abcedario) {
             esViable = true;
         } else {
             esViable = false;
-            break;
+            return (esViable);
         }
     }
 
