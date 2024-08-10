@@ -14,7 +14,10 @@ const salida= document.querySelector(".texto__encriptado");
 /*botones*/
 const btnEncriptar=document.querySelector(".btn__encriptar").addEventListener("click",()=>encriptar());
 const btnDecencriptar=document.querySelector(".btn__decencriptar").addEventListener("click",()=>decencriptar());
-const btnCopy=document.querySelector(".btn__copiar").addEventListener("click",()=>btn_copy())
+const btnCopy=document.querySelector(".btn__copiar").addEventListener("click",()=>btn_copy());
+
+//mensajes de alert
+const mensajeError="El mensaje tiene caracteres no permitidos"
 
 
 /**funcion que evalua el mensaje si esta en minusculas, sin caracteres especiales */
@@ -58,7 +61,7 @@ function encriptar(mensaje) {
         contenedorTextos.style.display="none"; 
         salida.style.display="block";
     } else {
-        alert("Error al ingresar mensaje");
+        alerta(mensajeError);
     }
 }
 /**funcion de boton decencriptas */
@@ -71,7 +74,7 @@ function decencriptar(mensaje) {
         btnCopiar.style.display="block"; 
         salida.style.display="block";
     } else {
-        alert("Error al ingresar mensaje");
+        alerta(mensajeError);
     }
 }
 
@@ -81,10 +84,17 @@ function btn_copy() {
 
     // Usar la API del Portapapeles para copiar el texto
     navigator.clipboard.writeText(textoCopyado)
-    alert(`texto; ${textoCopyado} copiado en porta papeles.`)
+    //alert(`texto; ${textoCopyado} copiado en porta papeles.`);
+    alerta(`Se Copio: ${textoCopyado}`)
     mensajeProcesado.innerHTML=" ";
     btnCopiar.style.display= "none"; 
 }
-
+function alerta(mensajeAlert) {
+    document.querySelector("#contenedor__alert").style.display="block";
+    document.querySelector("#mensaje").innerText=mensajeAlert;
+    document.querySelector("#btn__alert").addEventListener("click",()=>{
+        document.querySelector("#contenedor__alert").style.display="none";
+    });
+}
 
 

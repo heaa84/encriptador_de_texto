@@ -133,6 +133,7 @@ button:hover{
 /*contenedor lado derecho de la pagina para desincriptar texto*/
 .contenedor__texto__btn__encritado{
     min-width: 27.777777%;
+    max-width: 30%;
     gap: 20px;
     padding: 3%;
     display: flex;
