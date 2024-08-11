@@ -6,9 +6,9 @@
     --color-reglas: #04428d;
     --color-sombras: #04214636;
 
-    --color-boton: #498de0;
+    --color-boton: hwb(213 29% 12%);
 
-    --color-texto: #04428d;
+    --color-texto: hwb(213 0% 67%);
 
     --font-fira:"Fira Sans Condensed", sans-serif;
     --font-consola: monospace;
