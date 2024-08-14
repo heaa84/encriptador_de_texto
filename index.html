@@ -21,11 +21,11 @@
 <body>    
     <div id="contenedor__alert">
         <fieldset>
-            <legend id="legend">
+            <h4 id="legend">
                 Error:
-            </legend>
-            <p id="mensaje">Mensaje de error</p>
-            <input id="btn__alert" type="button" value="ACEPTAR">
+                <input id="btn__alert" type="button" value="X">
+            </h4>
+            <p id="mensaje"></p>
         </fieldset >
     </div>
     
@@ -33,18 +33,18 @@
         <section class="contenedor__texto__bnt">
             <section class="contenedor__ingrasar__texto">
                 <span class="contenedor__logo__alura__ingresa_texto">
-                    <img src="asset/letter-cultures-svgrepo-com.svg" alt="No se encontro logo a" class="logo__Alura">
+                    <img src="asset/letter-cultures-svgrepo-com.svg" id="svg__icono" alt="No se encontro logo a" class="logo__Alura">
                     <textarea name="entrada__texto" id="entrada__texto"  placeholder="ingresa texto a codificar" class="caja__ingrasa__texto" rows="8"></textarea>
                 </span>
                 <span class="texto__reglas"><img src="asset/exclamation-circle-fill.svg" alt="icono__esclamacion" class="icono__esclamacion"> Solo minuscilas, sin caracteres especiales</span>
             </section>
             <section class="contenedor__btn__encriptar__desencriptar">
-                <button class="btn__encriptar">                                
-                    <img src="asset/lock-fill.svg" alt="sin imagen" class="candados">
+                <button class="btn__encriptar" id="boton__encriptar">                                
+                    <img src="asset/lock-fill.svg" id="svg__img" alt="sin imagen" class="candados">
                     ENCRIPTAR
                 </button>
-                <button class="btn__decencriptar" > 
-                    <img src="asset/unlock-fill.svg" alt="sin imagen" class="candados"> 
+                <button class="btn__decencriptar" id="boton__desencriptar"> 
+                    <img src="asset/unlock-fill.svg" id="svg__img" alt="sin imagen" class="candados"> 
                     DESENCRIPTAR
                 </button>
             </section>
@@ -52,12 +52,12 @@
         
         <section class="contenedor__texto__btn__encritado">
             <span class="texto__encriptado"> </span> 
-            <img class="img__lupa" src="asset/search.svg" alt="imagen no encontrada"> 
+            <img src="asset/search.svg" id="svg__lupa" alt="imagen no encontrada" class="img__lupa"> 
              <section class="contenedor__ningun__mensaje">
                 <p class="parrafo__ningun__mensaje">Ningún mensaje fue encontrado</p>
                 <p class="parrafo__ingresa__texto">Ingresa el texto que desees encriptar o desencriptar.</p>
              </section>
-            <button class="btn__copiar"> <img src="asset/copy.svg" alt=""> COPIAR</button> <!--quitar onclick-->
+            <button class="btn__copiar" id="boton__copia"> <img src="asset/copy.svg" alt=""> COPIAR</button> <!--quitar onclick-->
         </section>
     </main>
     <footer>

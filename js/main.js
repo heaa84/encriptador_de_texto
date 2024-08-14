@@ -17,7 +17,7 @@ const btnDecencriptar=document.querySelector(".btn__decencriptar").addEventListe
 const btnCopy=document.querySelector(".btn__copiar").addEventListener("click",()=>btn_copy());
 
 //mensajes de alert
-const mensajeError="El mensaje tiene caracteres no permitidos"
+const mensajeError="El mensaje tiene caracteres no \n permitidos o \n esta vacio"
 
 
 /**funcion que evalua el mensaje si esta en minusculas, sin caracteres especiales */
@@ -62,6 +62,7 @@ function encriptar(mensaje) {
         salida.style.display="block";
     } else {
         alerta(mensajeError);
+        document.querySelector("fieldset").style.backgroundColor=("red");
     }
 }
 /**funcion de boton decencriptas */
@@ -86,6 +87,7 @@ function btn_copy() {
     navigator.clipboard.writeText(textoCopyado)
     //alert(`texto; ${textoCopyado} copiado en porta papeles.`);
     alerta(`Se Copio: ${textoCopyado}`)
+    document.querySelector("fieldset").style.backgroundColor=("hwb(117.04deg 9.02% 35.29%)");
     mensajeProcesado.innerHTML=" ";
     btnCopiar.style.display= "none"; 
 }

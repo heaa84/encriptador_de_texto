@@ -5,6 +5,7 @@
     --color-fondo: hwb(0 100% 0% / 0.3); 
     --color-reglas: #04428d;
     --color-sombras: #04214636;
+    --color-svg: red;
 
     --color-boton: hwb(213 29% 12%);
 
@@ -60,6 +61,7 @@ body{
     width: 120px;
     height: 48px;
     margin-bottom: 40px;
+    
 }
 .caja__ingrasa__texto{
     padding-left: 10%;
