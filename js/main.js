@@ -12,9 +12,13 @@ const imgLupa= document.querySelector(".img__lupa");
 const salida= document.querySelector(".texto__encriptado");
 
 /*botones*/
-const btnEncriptar=document.querySelector(".btn__encriptar").addEventListener("click",()=>encriptar());
-const btnDecencriptar=document.querySelector(".btn__decencriptar").addEventListener("click",()=>decencriptar());
-const btnCopy=document.querySelector(".btn__copiar").addEventListener("click",()=>btn_copy());
+const btnEncriptar=document.querySelector(".btn__encriptar");
+const btnDecencriptar=document.querySelector(".btn__decencriptar");
+const btnCopy=document.querySelector(".btn__copiar");
+
+btnEncriptar.addEventListener("click",()=>encriptar());
+btnDecencriptar.addEventListener("click",()=>decencriptar());
+btnCopy.addEventListener("click",()=>btn_copy());
 
 //mensajes de alert
 const mensajeError="El mensaje tiene caracteres no \n permitidos o \n esta vacio"
@@ -35,7 +39,7 @@ function evalua_mensaje(mensaje, abcedario) {
     // Usar el método some para verificar si alguna palabrade la lista está en la cadena
     esViable = (mensaje === mensaje.toLowerCase()) ? true : false;
     return (esViable);
-}
+};
 
 /**funcion para codifica/decodificar mensaje */
 function codiDecodiMensaje(mensaje, listaParametro, listaRemplazo) {
@@ -43,7 +47,7 @@ function codiDecodiMensaje(mensaje, listaParametro, listaRemplazo) {
         mensaje = mensaje.replaceAll(listaParametro[index], listaRemplazo[index]);
     }
     return mensaje;
-}
+};
 
 /**funcion del boton encriptar */
 function encriptar(mensaje) {
@@ -64,7 +68,8 @@ function encriptar(mensaje) {
         alerta(mensajeError);
         document.querySelector("fieldset").style.backgroundColor=("red");
     }
-}
+};
+
 /**funcion de boton decencriptas */
 function decencriptar(mensaje) {
     mensaje = entradaTexto.value;
@@ -77,7 +82,7 @@ function decencriptar(mensaje) {
     } else {
         alerta(mensajeError);
     }
-}
+};
 
 /**funcion del boton copiar */
 function btn_copy() {
@@ -90,7 +95,8 @@ function btn_copy() {
     document.querySelector("fieldset").style.backgroundColor=("hwb(117.04deg 9.02% 35.29%)");
     mensajeProcesado.innerHTML=" ";
     btnCopiar.style.display= "none"; 
-}
+};
+
 function alerta(mensajeAlert) {
     document.querySelector("#contenedor__alert").style.display="block";
     document.querySelector("#mensaje").innerText=mensajeAlert;

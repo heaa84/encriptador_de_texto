@@ -8,6 +8,9 @@ const botonDes=document.getElementById("boton__desencriptar");
 const botonCopy=document.getElementById("boton__copia");
 let posicionEsfera=1;
 
+const btnColorOver="red";
+
+
 class btn {
     cambiarTema=()=>{
         if (posicionEsfera==1) {// si la esfera esta ala izquierda
@@ -31,6 +34,15 @@ class btn {
                 
                 if (posicionEsfera==30) {
                     clearInterval(intervaloTiempo);
+                    var arrayElemento=[botonEnc,botonDes,btnCopiar];
+                    arrayElemento.forEach( elemento => {
+                        elemento.addEventListener("mouseover",()=>{
+                            elemento.style.background=btnColorOver;
+                            elemento.addEventListener("mouseout",()=>{
+                                elemento.style.background="hwb(117.04deg 9.02% 35.29%)";
+                            })
+                        })
+                    });
                 }
             };
         }else{
@@ -55,7 +67,15 @@ class btn {
                     
                     if (posicionEsfera==1) {
                         clearInterval(intervaloTiempo);
-                        console.log(tonoBotones);
+                        var arrayElemento=[botonEnc,botonDes,btnCopiar];
+                        arrayElemento.forEach( elemento => {
+                            elemento.addEventListener("mouseover",()=>{
+                                elemento.style.background=btnColorOver;
+                                elemento.addEventListener("mouseout",()=>{
+                                    elemento.style.background="hwb(212.8deg 29.02% 12.16%)";
+                                })
+                            })
+                        });
                         
                     }
                 };

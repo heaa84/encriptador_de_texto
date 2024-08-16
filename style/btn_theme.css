@@ -13,6 +13,8 @@ body{
     display: flex;
     justify-content: space-between;
     margin: .6% 3.5% ;
+    position: relative;
+    top: 40px; left:  -25px;
 }
 
 

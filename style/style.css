@@ -8,6 +8,7 @@
     --color-svg: red;
 
     --color-boton: hwb(213 29% 12%);
+    --color-btn-hover:red;
 
     --color-texto: hwb(213 0% 67%);
 
@@ -116,18 +117,19 @@ button{
     width: 45%;
     height: 67px;
     border-radius: 30px;
-    border: solid var(--color-texto) 1px;
+    border: none;
     background-color: var(--color-boton);
     color: var(--color-texto);
     font-family: var(--font-consola);
     font-weight: 700;
     font-size: 22px;
     text-align: center;
+
 }
 
 button:hover{
     background-color: var(--color-btn-hover);
-    border: solid var(--color-boton) 1px;
+    border: none;
     color: var(--color-texto);
     cursor: pointer;
 }
